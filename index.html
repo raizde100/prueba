@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Explorador de licitaciones públicas (OCDS Perú)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Explorador de licitaciones públicas</h1>
+      <p class="subtitle">
+        Consulta la API pública OCDS del Estado peruano y filtra por código
+        UNSPSC, departamento, entidad compradora y descripción.
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <form id="filters" class="filters" autocomplete="off">
+          <fieldset>
+            <legend>Filtros de búsqueda</legend>
+            <div class="grid">
+              <label class="field">
+                <span>Código UNSPSC</span>
+                <input
+                  type="text"
+                  id="unspsc"
+                  name="unspsc"
+                  placeholder="Ej: 25101507"
+                />
+              </label>
+              <label class="field">
+                <span>Departamento</span>
+                <input
+                  type="text"
+                  id="department"
+                  name="department"
+                  placeholder="Ej: Lima"
+                />
+              </label>
+              <label class="field">
+                <span>Entidad compradora</span>
+                <input
+                  type="text"
+                  id="buyer"
+                  name="buyer"
+                  placeholder="Ej: Ministerio de Salud"
+                />
+              </label>
+              <label class="field">
+                <span>Descripción</span>
+                <input
+                  type="text"
+                  id="description"
+                  name="description"
+                  placeholder="Palabras clave del proceso"
+                />
+              </label>
+              <label class="field">
+                <span>Resultados por página</span>
+                <select id="pageSize" name="pageSize">
+                  <option value="20">20</option>
+                  <option value="50" selected>50</option>
+                  <option value="100">100</option>
+                </select>
+              </label>
+            </div>
+            <div class="actions">
+              <button type="submit" class="primary">Buscar</button>
+              <button type="button" id="clearFilters">Limpiar filtros</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="card status-bar">
+        <div class="status-text" id="summary"></div>
+        <div class="status-text" id="status"></div>
+      </section>
+
+      <section class="card pagination" aria-live="polite">
+        <div class="pager">
+          <button type="button" id="prevPage" aria-label="Página anterior">
+            ◀
+          </button>
+          <div id="pageInfo" class="page-info">Página 1</div>
+          <button type="button" id="nextPage" aria-label="Página siguiente">
+            ▶
+          </button>
+        </div>
+      </section>
+
+      <section class="card results">
+        <div class="table-wrapper">
+          <table id="results" aria-live="polite">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Entidad</th>
+                <th>Departamento</th>
+                <th>UNSPSC</th>
+                <th>Monto estimado</th>
+                <th>Fechas</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Fuente de datos:
+        <a
+          href="https://contratacionesabiertas.oece.gob.pe/api/v1/records"
+          target="_blank"
+          rel="noopener noreferrer"
+          >API pública OCDS del Estado peruano</a
+        >.
+      </p>
+    </footer>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>
