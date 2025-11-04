@@ -2,124 +2,546 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Explorador de licitaciones públicas (OCDS Perú)</title>
+    <title>Automatiza tu carpeta de postulación para SEACE con IA + MCP | Procura</title>
+    <meta
+      name="description"
+      content="Genera declaraciones juradas, matriz de cumplimiento y oferta económica con IA. Cumplimiento trazable, firmas y empaquetado listo para SEACE."
+    />
+    <meta
+      name="keywords"
+      content="SEACE, OSCE, RNP, licitaciones públicas Perú, carpeta de postulación, bases integradas, matriz de cumplimiento, oferta económica, IA, MCP"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <h1>Explorador de licitaciones públicas</h1>
-      <p class="subtitle">
-        Consulta la API pública OCDS del Estado peruano y filtra por código
-        UNSPSC, departamento, entidad compradora y descripción.
-      </p>
+    <header class="top-nav" id="top-nav">
+      <div class="container nav-content">
+        <a class="brand" href="#hero" aria-label="Procura inicio">Procura</a>
+        <nav class="nav-links" aria-label="Principal">
+          <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
+            <span class="sr-only">Mostrar u ocultar navegación</span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul id="primary-menu">
+            <li><a href="#producto">Producto</a></li>
+            <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li><a href="#seguridad">Seguridad</a></li>
+            <li><a href="#precios">Precios</a></li>
+            <li><a href="#preguntas">Preguntas</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+          </ul>
+        </nav>
+        <div class="nav-ctas">
+          <a
+            class="btn ghost"
+            href="#lead-form"
+            data-analytics="cta-header-demo"
+            >Agendar demo</a
+          >
+          <a
+            class="btn primary"
+            href="#lead-form"
+            data-analytics="cta-header-free"
+            >Probar gratis</a
+          >
+        </div>
+      </div>
     </header>
 
-    <main class="container">
-      <section class="card">
-        <form id="filters" class="filters" autocomplete="off">
-          <fieldset>
-            <legend>Filtros de búsqueda</legend>
-            <div class="grid">
-              <label class="field">
-                <span>Código UNSPSC</span>
-                <input
-                  type="text"
-                  id="unspsc"
-                  name="unspsc"
-                  placeholder="Ej: 25101507"
-                />
-              </label>
-              <label class="field">
-                <span>Departamento</span>
-                <input
-                  type="text"
-                  id="department"
-                  name="department"
-                  placeholder="Ej: Lima"
-                />
-              </label>
-              <label class="field">
-                <span>Entidad compradora</span>
-                <input
-                  type="text"
-                  id="buyer"
-                  name="buyer"
-                  placeholder="Ej: Ministerio de Salud"
-                />
-              </label>
-              <label class="field">
-                <span>Descripción</span>
-                <input
-                  type="text"
-                  id="description"
-                  name="description"
-                  placeholder="Palabras clave del proceso"
-                />
-              </label>
-              <label class="field">
-                <span>Resultados por página</span>
-                <select id="pageSize" name="pageSize">
-                  <option value="20">20</option>
-                  <option value="50" selected>50</option>
-                  <option value="100">100</option>
-                </select>
-              </label>
+    <main>
+      <section class="hero" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="tag">IA + MCP para licitaciones públicas</p>
+            <h1>Genera tu carpeta de postulación para SEACE en minutos con IA</h1>
+            <p class="lead">
+              Extrae requisitos de las Bases, completa datos variables y descarga tu paquete
+              listo para presentar. Con trazabilidad, firmas y control de cumplimiento.
+            </p>
+            <ul class="hero-bullets" role="list">
+              <li>Parser de Bases Integradas</li>
+              <li>Plantillas legales y técnicas</li>
+              <li>Oferta económica por ítem/paquete</li>
+              <li>Checklist y empaquetado</li>
+              <li>Firmas digitales/manuales</li>
+              <li>Auditoría y logs</li>
+            </ul>
+            <div class="hero-ctas">
+              <a class="btn primary" href="#lead-form" data-analytics="cta-hero-free"
+                >Probar gratis</a
+              >
+              <a class="btn secondary" href="#lead-form" data-analytics="cta-hero-demo"
+                >Agendar demo</a
+              >
             </div>
-            <div class="actions">
-              <button type="submit" class="primary">Buscar</button>
-              <button type="button" id="clearFilters">Limpiar filtros</button>
+            <p class="social-proof">
+              Cumple con art. 52 (contenidos mínimos) y buenas prácticas OSCE.
+              <span class="note">*Referencia informativa; no es asesoría legal.</span>
+            </p>
+          </div>
+          <div class="hero-media">
+            <figure class="workflow-illustration" aria-labelledby="workflow-title">
+              <figcaption id="workflow-title" class="sr-only">
+                Flujo simplificado: bases a parser, documentos, firma y entrega.
+              </figcaption>
+              <div class="workflow-steps">
+                <div class="step">Bases Integradas</div>
+                <div class="step">Parser IA</div>
+                <div class="step">Plantillas MCP</div>
+                <div class="step">Firma</div>
+                <div class="step">ZIP SEACE</div>
+              </div>
+            </figure>
+            <div class="mockups">
+              <div class="mockup" aria-hidden="true">
+                <span>Dashboard de procesos</span>
+              </div>
+              <div class="mockup" aria-hidden="true">
+                <span>Vista matriz de cumplimiento</span>
+              </div>
+              <div class="mockup" aria-hidden="true">
+                <span>Generador de oferta económica</span>
+              </div>
             </div>
-          </fieldset>
-        </form>
-      </section>
-
-      <section class="card status-bar">
-        <div class="status-text" id="summary"></div>
-        <div class="status-text" id="status"></div>
-      </section>
-
-      <section class="card pagination" aria-live="polite">
-        <div class="pager">
-          <button type="button" id="prevPage" aria-label="Página anterior">
-            ◀
-          </button>
-          <div id="pageInfo" class="page-info">Página 1</div>
-          <button type="button" id="nextPage" aria-label="Página siguiente">
-            ▶
-          </button>
+          </div>
         </div>
       </section>
 
-      <section class="card results">
-        <div class="table-wrapper">
-          <table id="results" aria-live="polite">
-            <thead>
-              <tr>
-                <th>Título</th>
-                <th>Entidad</th>
-                <th>Departamento</th>
-                <th>UNSPSC</th>
-                <th>Monto estimado</th>
-                <th>Fechas</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+      <section class="section" id="producto">
+        <div class="container two-column">
+          <div>
+            <h2>Menos errores, más licitaciones presentadas a tiempo</h2>
+            <p>
+              Armar la carpeta de postulación consume horas: copiar formatos, revisar anexos,
+              cuadrar precios y firmar. Procura usa IA + MCP para estructurar la información y
+              guiarte paso a paso, dejando a tu equipo solo lo que requiere criterio comercial o
+              legal.
+            </p>
+          </div>
+          <div class="card highlight">
+            <h3>Ver demo guiada</h3>
+            <p>
+              Conoce el flujo completo en menos de 10 minutos y revisa un ejemplo real de
+              carpeta lista para cargar en SEACE.
+            </p>
+            <a class="btn secondary" href="#lead-form" data-analytics="cta-inline-demo"
+              >Ver demo guiada</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="como-funciona" aria-labelledby="steps-title">
+        <div class="container">
+          <h2 id="steps-title">Cómo funciona Procura</h2>
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-number">1</span>
+              <h3>Sube las Bases</h3>
+              <p>
+                Carga PDFs o Word. El parser extrae requisitos, anexos y EETT/TDR y construye la
+                matriz de cumplimiento automáticamente.
+              </p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">2</span>
+              <h3>Completa variables</h3>
+              <p>
+                Un asistente guía precios finales, tiempos de entrega, garantías, consorcio y CVs
+                para cada proceso.
+              </p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">3</span>
+              <h3>Genera documentos</h3>
+              <p>
+                Decl. juradas, aceptación de bases, matriz, oferta económica, carta de
+                presentación y promesa de consorcio en segundos.
+              </p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">4</span>
+              <h3>Firma y empaqueta</h3>
+              <p>
+                Índice, foliado y ZIP listo para SEACE, con checklist de verificación y trazado de
+                responsabilidades.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section automation" aria-labelledby="automation-title">
+        <div class="container two-column">
+          <div>
+            <h2 id="automation-title">Qué automatizamos vs. qué completa tu equipo</h2>
+            <div class="columns">
+              <div>
+                <h3>Automatizamos</h3>
+                <ul>
+                  <li>Borradores de declaraciones juradas</li>
+                  <li>Matriz de cumplimiento actualizada</li>
+                  <li>Índice, rotulación y foliado</li>
+                  <li>Estructura de oferta económica con IGV</li>
+                  <li>Chequeos de vigencias y anexos</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Completa tu equipo</h3>
+                <ul>
+                  <li>Precios finales y ajustes comerciales</li>
+                  <li>Marcas, modelos y fichas técnicas</li>
+                  <li>Tiempos de entrega y garantías</li>
+                  <li>Porcentajes y firmas de consorcio</li>
+                  <li>Documentos probatorios y certificados</li>
+                </ul>
+              </div>
+            </div>
+            <p class="disclaimer">
+              Tu organización conserva el control de la decisión comercial y la firma. Procura no
+              envía por ti en SEACE.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section features" aria-labelledby="features-title">
+        <div class="container">
+          <h2 id="features-title">Características claves</h2>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Parser de Bases</h3>
+              <p>Extrae requisitos y anexos en minutos, con referencias a los folios originales.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Plantillas legales y técnicas</h3>
+              <p>Modelos parametrizados y actualizables según la normativa OSCE vigente.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Motor de precios</h3>
+              <p>Calcula ítem o paquete, IGV, redondeos y descuentos con alertas de coherencia.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Validador de cumplimiento</h3>
+              <p>Rastrea cada requisito hacia el documento que lo respalda con evidencias.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Firmas</h3>
+              <p>Flujos para firma manual o digital con certificados locales y control de versiones.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Auditoría</h3>
+              <p>Logs de edición, aprobaciones y descargas listos para auditorías internas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section technology" aria-labelledby="tech-title">
+        <div class="container two-column">
+          <div>
+            <h2 id="tech-title">Tecnología IA + MCP que escala contigo</h2>
+            <p>
+              MCP (Model Context Protocol) orquesta servidores para parsing, datos maestros,
+              render de documentos, firma y empaquetado. Mantén tus fuentes y permisos bajo
+              control, con auditoría completa y actualización continua.
+            </p>
+          </div>
+          <figure class="tech-diagram" aria-labelledby="diagram-title">
+            <figcaption id="diagram-title" class="sr-only">Diagrama del flujo MCP</figcaption>
+            <div class="diagram-flow">
+              <span>Bases</span>
+              <span>Parser</span>
+              <span>Plantillas</span>
+              <span>QA</span>
+              <span>Firma</span>
+              <span>ZIP</span>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section security" id="seguridad" aria-labelledby="security-title">
+        <div class="container">
+          <h2 id="security-title">Seguridad y cumplimiento</h2>
+          <div class="security-grid">
+            <div class="security-item">Cifrado en reposo y en tránsito</div>
+            <div class="security-item">Separación de funciones (extracción ≠ firma)</div>
+            <div class="security-item">Control de accesos y roles</div>
+            <div class="security-item">Historial de cambios descargable</div>
+          </div>
+          <p class="disclaimer small">
+            Procura no brinda asesoría legal. Revisa tus Bases Integradas y normativa aplicable.
+          </p>
+        </div>
+      </section>
+
+      <section class="section integrations" aria-labelledby="integrations-title">
+        <div class="container">
+          <h2 id="integrations-title">Integraciones listas para conectar</h2>
+          <div class="chips">
+            <span class="chip">RNP (vigencia)</span>
+            <span class="chip">SEACE (asistencia de carga)</span>
+            <span class="chip">Correo corporativo</span>
+            <span class="chip">Drive / SharePoint</span>
+            <span class="chip">Firma digital (certificado local)</span>
+          </div>
+          <p class="note">Integraciones sujetas a configuración del cliente.</p>
+        </div>
+      </section>
+
+      <section class="section pricing" id="precios" aria-labelledby="pricing-title">
+        <div class="container">
+          <h2 id="pricing-title">Planes flexibles según tu volumen</h2>
+          <div class="pricing-grid">
+            <article class="plan-card">
+              <h3>Starter</h3>
+              <p class="tagline">Hasta 3 procesos/mes</p>
+              <p>Todo lo esencial para comenzar y validar el flujo.</p>
+              <a class="btn primary" href="#lead-form" data-analytics="cta-pricing-starter"
+                >Probar gratis</a
+              >
+            </article>
+            <article class="plan-card featured">
+              <h3>Pro</h3>
+              <p class="tagline">Hasta 15 procesos/mes</p>
+              <p>Automatización avanzada, validaciones y control de equipo.</p>
+              <a class="btn secondary" href="#lead-form" data-analytics="cta-pricing-pro"
+                >Hablar con ventas</a
+              >
+            </article>
+            <article class="plan-card">
+              <h3>Enterprise</h3>
+              <p class="tagline">Ilimitado</p>
+              <p>Flujos personalizados, SSO, auditoría, soporte y SLAs.</p>
+              <a class="btn ghost" href="#lead-form" data-analytics="cta-pricing-enterprise"
+                >Agendar demo</a
+              >
+            </article>
+          </div>
+          <p class="note">Precios en USD. Descuentos anuales disponibles.</p>
+        </div>
+      </section>
+
+      <section class="section testimonials" aria-labelledby="testimonials-title">
+        <div class="container">
+          <h2 id="testimonials-title">Resultados que hablan por sí solos</h2>
+          <div class="testimonial-grid">
+            <figure class="testimonial">
+              <blockquote>
+                “Reducimos 60% el tiempo de armado de carpeta y eliminamos reprocesos entre
+                logística y legal.”
+              </blockquote>
+              <figcaption>Gerente de Administración, proveedor industrial</figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                “Podemos postular simultáneamente a más procesos con el mismo equipo gracias al
+                checklist automatizado.”
+              </blockquote>
+              <figcaption>Jefa de Logística, servicios médicos</figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>
+                “La trazabilidad requisito-documento nos permitió superar una auditoría interna sin
+                observaciones.”
+              </blockquote>
+              <figcaption>Director Comercial, tecnología educativa</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section faqs" id="preguntas" aria-labelledby="faq-title">
+        <div class="container">
+          <h2 id="faq-title">Preguntas frecuentes</h2>
+          <div class="faq-list">
+            <details>
+              <summary>¿Cumple con los contenidos mínimos?</summary>
+              <p>
+                Sí, generamos los borradores exigidos (declaraciones juradas, matriz de
+                cumplimiento, oferta económica, etc.) que debes revisar y firmar antes de enviar.
+              </p>
+            </details>
+            <details>
+              <summary>¿Pueden enviar la oferta en SEACE?</summary>
+              <p>
+                No automatizamos el envío. Te guiamos con un checklist y empaquetado listo para que
+                tu equipo lo cargue en SEACE.
+              </p>
+            </details>
+            <details>
+              <summary>¿Qué datos debo completar?</summary>
+              <p>
+                Precios, tiempos, composición de consorcio, documentos probatorios y la firma
+                responsable. El sistema valida que no falte nada.
+              </p>
+            </details>
+            <details>
+              <summary>¿Sirve para Adjudicación Simplificada/LP/SCI?</summary>
+              <p>
+                Sí, las plantillas son adaptables según las Bases y los formatos requeridos en cada
+                proceso.
+              </p>
+            </details>
+            <details>
+              <summary>¿Qué es MCP?</summary>
+              <p>
+                Es un estándar para conectar IA con herramientas y servidores de forma segura y
+                trazable, manteniendo tus datos bajo control.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section resources" id="recursos" aria-labelledby="resources-title">
+        <div class="container">
+          <h2 id="resources-title">Recursos para tu equipo</h2>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3>Guía de checklist SEACE</h3>
+              <p>Descarga un checklist editable para asegurar el cumplimiento del art. 52.</p>
+              <a class="btn link" href="#lead-form" data-analytics="cta-resource-checklist"
+                >Solicitar recurso</a
+              >
+            </article>
+            <article class="resource-card">
+              <h3>Plantilla de matriz de riesgos</h3>
+              <p>Identifica riesgos comerciales y operativos antes de presentar tu oferta.</p>
+              <a class="btn link" href="#lead-form" data-analytics="cta-resource-risk"
+                >Descargar muestra</a
+              >
+            </article>
+            <article class="resource-card">
+              <h3>Workshop MCP para licitaciones</h3>
+              <p>Agenda una sesión para tu equipo y adapta los flujos a tus políticas internas.</p>
+              <a class="btn link" href="#lead-form" data-analytics="cta-resource-workshop"
+                >Reservar cupo</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section lead" id="lead-form" aria-labelledby="lead-title">
+        <div class="container lead-grid">
+          <div>
+            <h2 id="lead-title">Empieza hoy: genera tu primera carpeta con IA</h2>
+            <p>
+              Déjanos tus datos y recibe acceso a la prueba gratuita o coordina una demo con nuestro
+              equipo de especialistas en contrataciones públicas.
+            </p>
+            <div class="cta-buttons">
+              <a class="btn primary" href="#lead-form" data-analytics="cta-footer-free"
+                >Probar gratis</a
+              >
+              <a class="btn secondary" href="#lead-form" data-analytics="cta-footer-demo"
+                >Agendar demo</a
+              >
+            </div>
+          </div>
+          <form class="lead-form" aria-label="Formulario de contacto" novalidate>
+            <div class="form-grid">
+              <label>
+                Nombre
+                <input type="text" name="name" placeholder="Nombre completo" required />
+              </label>
+              <label>
+                Empresa
+                <input type="text" name="company" placeholder="Razón social" required />
+              </label>
+              <label>
+                RUC
+                <input type="text" name="ruc" placeholder="12345678901" pattern="\d{11}" />
+              </label>
+              <label>
+                Email
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="nombre@empresa.com"
+                  required
+                  aria-required="true"
+                />
+              </label>
+              <label>
+                Teléfono
+                <input type="tel" name="phone" placeholder="+51 999 999 999" />
+              </label>
+              <label>
+                ¿Cuántas licitaciones al mes?
+                <select name="tenders">
+                  <option value="1-3">1-3</option>
+                  <option value="4-10">4-10</option>
+                  <option value="11-20">11-20</option>
+                  <option value="20+">Más de 20</option>
+                </select>
+              </label>
+              <label>
+                ¿Usas consorcios?
+                <select name="consortiums">
+                  <option value="si">Sí</option>
+                  <option value="no">No</option>
+                  <option value="planificando">Planificando</option>
+                </select>
+              </label>
+              <label class="full">
+                Mensaje
+                <textarea name="message" rows="3" placeholder="Cuéntanos qué buscas"></textarea>
+              </label>
+            </div>
+            <label class="consent">
+              <input type="checkbox" name="consent" required />
+              <span>Acepto la política de privacidad y recibir comunicaciones de Procura.</span>
+            </label>
+            <button class="btn primary" type="submit" data-analytics="cta-form-submit">
+              Enviar
+            </button>
+            <p class="form-success" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <p>
-        Fuente de datos:
-        <a
-          href="https://contratacionesabiertas.oece.gob.pe/api/v1/records"
-          target="_blank"
-          rel="noopener noreferrer"
-          >API pública OCDS del Estado peruano</a
-        >.
-      </p>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <a class="brand" href="#hero">Procura</a>
+        <div class="footer-ctas">
+          <a class="btn primary" href="#lead-form" data-analytics="cta-footer-free-bottom"
+            >Probar gratis</a
+          >
+          <a class="btn secondary" href="#lead-form" data-analytics="cta-footer-demo-bottom"
+            >Agendar demo</a
+          >
+        </div>
+        <nav aria-label="Enlaces del pie de página">
+          <ul>
+            <li><a href="#producto">Producto</a></li>
+            <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li><a href="#seguridad">Seguridad</a></li>
+            <li><a href="#precios">Precios</a></li>
+            <li><a href="#preguntas">Preguntas</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+          </ul>
+        </nav>
+        <div class="footer-links">
+          <a href="#">Términos</a>
+          <a href="#">Privacidad</a>
+          <a href="mailto:contacto@procura.com">Contacto</a>
+        </div>
+        <p class="copyright">© <span id="current-year"></span> Procura. Todos los derechos reservados.</p>
+      </div>
     </footer>
 
     <script src="main.js" defer></script>
